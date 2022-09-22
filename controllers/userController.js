@@ -37,7 +37,12 @@ exports.getUser = async (req, res) => {
         // const result = await User.find({ $and: [{ name: 'Chris' },{age:{$gt:20,$lt:30}}] })
         // const result = await User.find({lang:{$type:'array'} })
         // const result = await User.find({name:{$regex:/ch/i} })
-        const result = await User.find({name:{$regex:/^\w{5}$/} })
+        // const result = await User.find({name:{$regex:/^\w{5}$/} })
+        const result = await User.find({
+            $expr:{
+                $gt:['$budget','$spent']
+            }
+        })
 
         console.log(result)
         res.send(result)

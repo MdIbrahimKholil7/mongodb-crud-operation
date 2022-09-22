@@ -4,7 +4,9 @@ const UserSchema = mongoose.Schema({
     age:Number,
     profession:String,
     lang:Array,
-    address:String
+    address:String,
+    budget:Number,
+    spent:Number
  });
 module.exports=UserSchema
 
