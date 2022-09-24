@@ -38,6 +38,6 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log('Server is running on port '.red,port)
+    console.log('Server is running on port '.yellow.bold,port)
 })
 
